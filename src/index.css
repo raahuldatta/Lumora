@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+
+  /* Dollar Green Accent Colors */
+  --color-emerald-50: #f2f7f2;
+  --color-emerald-100: #dfebd9;
+  --color-emerald-200: #c1dbc0;
+  --color-emerald-300: #a3cc88;
+  --color-emerald-400: #8ec371;
+  --color-emerald-500: #85bb65; /* Dollar Green Core */
+  --color-emerald-600: #6a9c4d;
+  --color-emerald-700: #527c3c;
+  --color-emerald-800: #426332;
+  --color-emerald-900: #36512b;
+  --color-emerald-950: #1b2d12;
+
+  /* Money/Ink Dark Theme (replacing neutral zinc) */
+  --color-zinc-50: #f4f6f4;
+  --color-zinc-100: #e7efe9;
+  --color-zinc-200: #c9dbcf;
+  --color-zinc-300: #a7c0af;
+  --color-zinc-400: #7b9983;
+  --color-zinc-500: #516e59;
+  --color-zinc-600: #3c5443;
+  --color-zinc-700: #2d3f32;
+  --color-zinc-800: #1f2c22;
+  --color-zinc-900: #121a14;
+  --color-zinc-950: #0b110c;
+}
+
+@layer base {
+  body {
+    @apply bg-zinc-950 text-zinc-200 antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-zinc-950;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-zinc-800 rounded-full hover:bg-zinc-700 transition-colors;
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+  .animate-marquee:hover {
+    animation-play-state: paused;
+  }
+}
+
